@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Book Index{% endblock %}
+
+{% block body %}
+
+
+    <div class="table-wrapper">
+        <table class="table">
+            <caption>Liste des livres de notre bibliothèque</caption>
+            <thead>
+            <tr>
+
+                <th>Titre</th>
+                <th>Genre</th>
+                <th>Auteur</th>
+                <th>Publié le </th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for book in books %}
+                <tr>
+
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.genre }}</td>
+                    <td>{{ book.author }}</td>
+                    <td>{{ book.publishedAt ? book.publishedAt|date('Y-m-d') : '' }}</td>
+                    <td>
+                        <a href="{{ path('app_book_show', {'id': book.id}) }}" class="btn btn-info">Afficher</a>
+                        <a href="{{ path('app_book_edit', {'id': book.id}) }}" class="btn btn-warning">Modifier</a>
+                        <a href="{{ path('app_book_delete', {'id': book.id}) }}" class="btn btn-danger" onclick="return confirm('Are you sure?')">Supprimer</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5" class="no-data">No records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+<section>
+    <div class="NavButton">
+    <a href="{{ path('app_book_new') }}" class="btn btn-primary">Ajouter un ouvrage</a>
+    </div>
+</section>
+{% endblock %}

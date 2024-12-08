@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+    <h1>Bienvenue dans votre Bibliothèque</h1>
+
+
+
+    {% if app.user %}
+        {# Utilisateur connecté #}
+        {% if isAdmin %}
+
+            <div class="admin-dashboard">
+                <h2>Tableau de bord Administrateur</h2>
+                <p>Vous êtes un administrateur. Voici les outils réservés aux admins.</p>
+
+                <div class="d-flex justify-content-center gap-3 py-3">
+                    <a href="{{ path('app_book_index') }}" class="btn btn-primary">Gestion des ouvrages</a>
+                    <a href="{{ path('app_borrow_index') }}" class="btn btn-primary">Gestion des emprunts</a>
+                    <a href="{{ path('app_author_index') }}" class="btn btn-primary">Gestion des auteurs</a>
+                </div>
+                <ul>
+                    <li>Gestion des utilisateurs</li>
+                    <li>Voir les statistiques</li>
+                </ul>
+            </div>
+        {% elseif isUser %}
+            <div class="user-dashboard">
+                <h2>Bienvenue sur votre dashboard</h2>
+                <p class="alert-success">Vous êtes un utilisateur. Voici les informations réservées aux utilisateurs :</p>
+                <ul>
+                    <li>Voir vos livres préférés</li>
+                    <li>Mettre à jour votre profil</li>
+                </ul>
+            </div>
+        {% endif %}
+    {% else %}
+        {# Utilisateur non connecté #}
+        <p class="text-white">Vous devez être connecté pour accéder à votre tableau de bord => <a href="{{ path('app_login') }}" class="text-white">Se connecter</a></p>
+
+    {% endif %}
+
+
+
+<div class="deconnect">
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <a href="{{ path('app_logout') }}">Se déconnecter</a>
+    {% endif %}
+</div>
+{% endblock %}
