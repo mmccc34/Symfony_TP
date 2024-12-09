@@ -3,11 +3,13 @@
 {% block title %}Edit Borrow{% endblock %}
 
 {% block body %}
-    <h1>Edit Borrow</h1>
+    <h1>Modifier un emprunt</h1>
 
-    {{ include('borrow/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('borrow/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 
-    <a href="{{ path('app_borrow_index') }}">back to list</a>
+<div class="NavButton">
+    <a href="{{ path('app_borrow_index') }}">Retour à la liste des emprunts</a>
+</div>
 
     {{ include('borrow/_delete_form.html.twig') }}
 {% endblock %}

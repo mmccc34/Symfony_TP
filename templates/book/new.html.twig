@@ -3,13 +3,13 @@
 {% block title %}New Book{% endblock %}
 
 {% block body %}
-    <h1>Create new Book</h1>
+    <h1>Ajouter un ouvrage</h1>
 <div class="table">
     {{ include('book/_form.html.twig') }}
 </div>
     <section>
 <div class="NavButton">
-    <a  href="{{ path('app_book_index') }}">back to list</a>
+    <a  href="{{ path('app_book_index') }}">Retour à la liste</a>
 </div>
     </section>
 {% endblock %}

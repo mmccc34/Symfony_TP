@@ -18,10 +18,16 @@ class BookType extends AbstractType
             ->add('title')
             ->add('genre', ChoiceType::class, [
                 'choices' => [
-                    'Fiction' => 'fiction',
-                    'Non-fiction' => 'non_fiction',
-                    'Science Fiction' => 'science_fiction',
+                    'Science-Fiction' => 'Science-Fiction',
                     'Fantasy' => 'fantasy',
+                    'Roman Policier (Thriller / Mystère)' => 'Roman Policier (Thriller / Mystère)',
+                    'Romance' => 'Romance',
+                    'Historique' => 'Historique',
+                    'Biographie /Autobiographie' => 'Biographie /Autobiographie',
+                    'Horreur' => 'Horreur',
+                    'Développement personnel' => 'Développement personnel',
+                    'Essai / Philosophie' => 'Essai / Philosophie',
+
                 ],
                 'label' => 'Genre',
             ])

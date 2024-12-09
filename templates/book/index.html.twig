@@ -7,7 +7,7 @@
 
     <div class="table-wrapper">
         <table class="table">
-            <caption>Liste des livres de notre bibliothèque</caption>
+            <h1>Liste des ouvrages de notre bibliothèque</h1>
             <thead>
             <tr>
 
@@ -25,11 +25,13 @@
                     <td>{{ book.title }}</td>
                     <td>{{ book.genre }}</td>
                     <td>{{ book.author }}</td>
-                    <td>{{ book.publishedAt ? book.publishedAt|date('Y-m-d') : '' }}</td>
+                    <td>{{ book.publishedAt ? book.publishedAt|date('d-m-Y') : '' }}</td>
                     <td>
                         <a href="{{ path('app_book_show', {'id': book.id}) }}" class="btn btn-info">Afficher</a>
+                        {% if is_granted('ROLE_ADMIN') %}
                         <a href="{{ path('app_book_edit', {'id': book.id}) }}" class="btn btn-warning">Modifier</a>
                         <a href="{{ path('app_book_delete', {'id': book.id}) }}" class="btn btn-danger" onclick="return confirm('Are you sure?')">Supprimer</a>
+                        {% endif %}
                     </td>
                 </tr>
             {% else %}
@@ -41,8 +43,10 @@
         </table>
     </div>
 <section>
+    {% if is_granted('ROLE_ADMIN') %}
     <div class="NavButton">
     <a href="{{ path('app_book_new') }}" class="btn btn-primary">Ajouter un ouvrage</a>
     </div>
+    {% endif %}
 </section>
 {% endblock %}

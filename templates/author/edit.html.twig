@@ -3,11 +3,12 @@
 {% block title %}Edit Author{% endblock %}
 
 {% block body %}
-    <h1>Edit Author</h1>
+    <h1>Modifier auteur - auteure</h1>
 
-    {{ include('author/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('author/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 
-    <a href="{{ path('app_author_index') }}">back to list</a>
-
+<div class="NavButton">
+    <a href="{{ path('app_author_index') }}">Retour à la liste des auteurs - auteures</a>
+</div>
     {{ include('author/_delete_form.html.twig') }}
 {% endblock %}

@@ -3,32 +3,39 @@
 {% block title %}Author{% endblock %}
 
 {% block body %}
-    <h1>Author</h1>
+    <h1>l'auteure - L'auteur</h1>
 
     <table class="table">
         <tbody>
+
             <tr>
-                <th>Id</th>
-                <td>{{ author.id }}</td>
-            </tr>
-            <tr>
-                <th>FirstName</th>
+                <th>Prénom</th>
                 <td>{{ author.firstName }}</td>
             </tr>
             <tr>
-                <th>LastName</th>
+                <th>Nom</th>
                 <td>{{ author.lastName }}</td>
             </tr>
             <tr>
-                <th>Bio</th>
+                <th>Biographie</th>
                 <td>{{ author.bio }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('app_author_index') }}">back to list</a>
+    <div class="text-center mt-4">
+    <a href="{{ path('app_author_index') }}" class="btn btn-secondary">Retour à la liste</a>
+        {% if is_granted('ROLE_ADMIN') %}
+    <a href="{{ path('app_author_edit', {'id': author.id}) }}" class="btn btn-primary">Modifier</a>
+    {{ include('author/_delete_form.html.twig', { 'class': 'btn btn-danger' }) }}
+        {% endif %}
 
-    <a href="{{ path('app_author_edit', {'id': author.id}) }}">Modifier</a>
 
-    {{ include('author/_delete_form.html.twig') }}
+    </div>
+
+
+
+
+
+
 {% endblock %}

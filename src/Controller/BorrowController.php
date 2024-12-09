@@ -17,8 +17,20 @@ final class BorrowController extends AbstractController
     #[Route(name: 'app_borrow_index', methods: ['GET'])]
     public function index(BorrowRepository $borrowRepository): Response
     {
+        // Obtenez l'utilisateur connecté
+        $user = $this->getUser();
+
+        // Vérifiez les rôles pour déterminer les emprunts à afficher
+        if ($this->isGranted('ROLE_ADMIN')) {
+            // Si administrateur, afficher tous les emprunts
+            $borrows = $borrowRepository->findAll();
+        } else {
+            // Sinon, afficher uniquement les emprunts de l'utilisateur connecté
+            $borrows = $borrowRepository->findBy(['user' => $user]);
+        }
+
         return $this->render('borrow/index.html.twig', [
-            'borrows' => $borrowRepository->findAll(),
+            'borrows' => $borrows,
         ]);
     }
 
