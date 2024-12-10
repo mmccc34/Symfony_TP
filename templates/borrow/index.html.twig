@@ -9,9 +9,9 @@
         <table class="table table-striped table-hover">
             <thead class="table-dark">
             <tr>
-                <th>Nom Complet</th>
-                <th>Date d'emprunt</th>
-                <th>Statut</th>
+                <th onclick="sortTable(0)">Nom Complet <span class="sort-arrow" id="arrow-name">&#x2195;</span></th>
+                <th onclick="sortTable(1)">Date d'emprunt <span class="sort-arrow" id="arrow-name">&#x2195;</span></th>
+                <th onclick="sortTable(2)">Statut <span class="sort-arrow" id="arrow-name">&#x2195;</span></th>
                 {% if is_granted('ROLE_ADMIN') %}
                 <th>Actions</th>
                 {% endif %}
