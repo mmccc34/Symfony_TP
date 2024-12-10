@@ -18,7 +18,7 @@ class AuthorType extends AbstractType
         'label' => 'Prénom'
     ])
             ->add('lastName', TextType::class, [
-                'label' => 'Prénom'])
+                'label' => 'Nom'])
             ->add('bio')
 
         ;

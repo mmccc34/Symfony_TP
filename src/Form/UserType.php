@@ -26,8 +26,8 @@ class UserType extends AbstractType
                     'Administrateur' => 'ROLE_ADMIN',
                     'Utilisateur' => 'ROLE_USER',
                 ],
-                'multiple' => true, // Permet la sélection multiple
-                'expanded' => true, // Affiche des cases à cocher au lieu d'un menu déroulant
+                'multiple' => true,
+                'expanded' => true,
             ])
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
@@ -41,7 +41,7 @@ class UserType extends AbstractType
                     new Length([
                         'min' => 6,
                         'minMessage' => 'Your password should be at least {{ limit }} characters',
-                        // max length allowed by Symfony for security reasons
+
                         'max' => 4096,
                     ]),
                 ],

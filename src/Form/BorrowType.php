@@ -26,9 +26,9 @@ class BorrowType extends AbstractType
                     'Rendu' => 'Rendu',
                     'En retard' => 'En retard',
                 ],
-                'expanded' => false, // Liste déroulante (par défaut)
-                'multiple' => false, // Un seul choix possible
-                'placeholder' => 'Sélectionner un statut', // Option par défaut
+                'expanded' => false,
+                'multiple' => false,
+                'placeholder' => 'Sélectionner un statut',
             ])
             ->add('user', EntityType::class, [
                 'class' => User::class,
@@ -40,7 +40,7 @@ class BorrowType extends AbstractType
             ])
             ->add('save', SubmitType::class, [
                 'label' => 'Enregistrer Emprunt',
-                'attr' => ['class' => 'btn btn-primary'], // Utilisation d'une classe Bootstrap pour le bouton
+                'attr' => ['class' => 'btn btn-primary'],
             ]);
 
     }

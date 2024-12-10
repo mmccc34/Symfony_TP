@@ -8,13 +8,20 @@
     <div class="table-wrapper">
         <table class="table">
             <h1>Liste des ouvrages de notre bibliothèque</h1>
+            <section>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <div class="NavButton">
+                        <a href="{{ path('app_book_new') }}" class="btn btn-primary">Ajouter un ouvrage</a>
+                    </div>
+                {% endif %}
+            </section>
             <thead>
             <tr>
 
-                <th>Titre</th>
-                <th>Genre</th>
-                <th>Auteur</th>
-                <th>Publié le </th>
+                <th onclick="sortTable(0)">Titre <span class="sort-arrow" id="arrow-name">&#x2195;</span></th>
+                <th onclick="sortTable(1)">Genre <span class="sort-arrow" id="arrow-email">&#x2195;</span></th>
+                <th onclick="sortTable(2)">Auteurs <span class="sort-arrow" id="arrow-roles">&#x2195;</span></th>
+                <th onclick="sortTable(3)">Publié le <span class="sort-arrow" id="arrow-roles">&#x2195;</span></th>
                 <th>Actions</th>
             </tr>
             </thead>
@@ -42,11 +49,5 @@
             </tbody>
         </table>
     </div>
-<section>
-    {% if is_granted('ROLE_ADMIN') %}
-    <div class="NavButton">
-    <a href="{{ path('app_book_new') }}" class="btn btn-primary">Ajouter un ouvrage</a>
-    </div>
-    {% endif %}
-</section>
+
 {% endblock %}

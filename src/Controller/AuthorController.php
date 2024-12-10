@@ -78,4 +78,5 @@ final class AuthorController extends AbstractController
 
         return $this->redirectToRoute('app_author_index', [], Response::HTTP_SEE_OTHER);
     }
+
 }

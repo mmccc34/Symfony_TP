@@ -13,7 +13,8 @@
 
             <div class="admin-dashboard">
                 <h2>Tableau de bord Administrateur</h2>
-                <p>Vous êtes un administrateur.</p>
+
+                <p>=> Vous êtes connecté en tant qu'Administrateur <=</p>
 
                 <div class="d-flex justify-content-center gap-3 py-3">
                     <a href="{{ path('app_book_index') }}" class="btn btn-primary">Gestion des ouvrages</a>
@@ -26,7 +27,7 @@
         {% elseif isUser %}
             <div class="user-dashboard">
                 <h2>Bienvenue sur votre dashboard</h2>
-                <p class="alert-success">Vous êtes connecté en tant qu'utilisateur</p>
+                <p class="alert-success">=> Vous êtes connecté en tant qu'utilisateur <=</p>
 
                 <div class="d-flex justify-content-center gap-3 py-3">
                     <a href="{{ path('app_borrow_index') }}" class="btn btn-primary">Gérer mes emprunts</a>

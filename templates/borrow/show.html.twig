@@ -1,14 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Emprunts{% endblock %}
+{% block title %}Borrow{% endblock %}
 
 {% block body %}
-    <h1 class="text-center">Emprunts</h1>
+    <h1 class="text-center">Borrow</h1>
 
     <div class="container">
         <!-- Centrage du tableau -->
         <table class="table mx-auto">
             <tbody>
+
+            <th>Utilisateur</th>
+            <td>{{ borrow.user.name }}</td>
 
             <tr>
                 <th>Date d'emprunt</th>

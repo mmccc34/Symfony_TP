@@ -34,6 +34,8 @@ class Book
     #[ORM\OneToMany(targetEntity: Borrow::class, mappedBy: 'book')]
     private Collection $borrows;
 
+
+
     public function __construct()
     {
         $this->borrows = new ArrayCollection();
