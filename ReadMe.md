@@ -23,7 +23,18 @@
   ... ...  ... ...  ..  ...  ..  ...  ..  ... ...  ... ...  ..  ...  ..  ...  ..  ... ...  ... ...
 ... ... .... ... .... ... .... ... ... .... ... .... ... .... ... .... ... ... .... ... .... ... ...
 
+
+
+NOTES :
+//////// Pour la gestion des Admin et Utilsateurs j'ai utilisé le principe du masquage dans la vue avec : {% if is_granted('ROLE_ADMIN') %} /////////
+/////////Note : pour ce projet, à quelques détails près, je n'ai pas codé moi-même le style puisque ce n'était pas l'essentiel de l'exercice./////////
+//////// Idem pour le code Javascript du classement par colonne ////////
+
+
+
+///////////
 Pré-Requis
+//////////
 
 Pour exécuter ce projet, vous aurez besoin de :
 
