@@ -95,15 +95,21 @@ Sur votre navigateur entrez l'adresse
 http://127.0.0.1:8000/
 
 Pour vous connecter vous pouvez utiliser :
-
+----------------------------------
 Soit un compte Administrateur :  
 Mail : christophe@me.com
 Mot de passe : 123456
+ou
+Mail : sébastien@me.com
+Mot de passe : 123456
+---------------------------------
 
+
+-----------------------------
 Soit un compte Utilisateur :
 Mail : sylvie@me.com
 Mot de passe : 123456
-
+-----------------------------
 
 
 ///////////////////////////////////////////
