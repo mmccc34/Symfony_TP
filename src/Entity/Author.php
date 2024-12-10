@@ -31,6 +31,8 @@ class Author
     #[ORM\OneToMany(targetEntity: Book::class, mappedBy: 'author')]
     private Collection $books;
 
+
+    //Fonction constructeur
     public function __construct()
     {
         $this->books = new ArrayCollection();
@@ -41,6 +43,7 @@ class Author
         return $this->id;
     }
 
+    //Getter et Setter
     public function getFirstName(): ?string
     {
         return $this->firstName;
@@ -106,6 +109,8 @@ class Author
 
         return $this;
     }
+
+    //Fonction To_String pour transformer en chaine de caractères
     public function __toString(): string
     {
         return $this->firstName . ' ' . $this->lastName; // ou tout autre format de chaîne

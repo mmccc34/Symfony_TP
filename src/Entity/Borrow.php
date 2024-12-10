@@ -32,7 +32,7 @@ class Borrow
     {
         return $this->id;
     }
-
+//Getter et Setter
     public function getBorrowDate(): ?\DateTimeImmutable
     {
         return $this->borrowDate;

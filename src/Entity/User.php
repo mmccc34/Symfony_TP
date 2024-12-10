@@ -47,6 +47,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(targetEntity: Borrow::class, mappedBy: 'user')]
     private Collection $borrow;
 
+    //Fonction Constructeur
     public function __construct()
     {
         $this->borrow = new ArrayCollection();
@@ -56,7 +57,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         return $this->id;
     }
-
+//Getter et setter
     public function getEmail(): ?string
     {
         return $this->email;

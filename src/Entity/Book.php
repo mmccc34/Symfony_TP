@@ -35,7 +35,7 @@ class Book
     private Collection $borrows;
 
 
-
+    //Fonction constructeur
     public function __construct()
     {
         $this->borrows = new ArrayCollection();
@@ -45,7 +45,7 @@ class Book
     {
         return $this->id;
     }
-
+//Getter et Setter
     public function getTitle(): ?string
     {
         return $this->title;
@@ -123,6 +123,7 @@ class Book
         return $this;
     }
 
+    //Fonction To_String
     public function __toString()
     {
         return $this->publishedAt ? $this->publishedAt->format('Y-m-d H:i:s') : '';

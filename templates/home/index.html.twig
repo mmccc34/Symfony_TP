@@ -10,7 +10,7 @@
     {% if app.user %}
         {# Utilisateur connecté #}
         {% if isAdmin %}
-
+            {# Administrateur #}
             <div class="admin-dashboard">
                 <h2>Tableau de bord Administrateur</h2>
 
@@ -25,6 +25,7 @@
 
             </div>
         {% elseif isUser %}
+            {# Utilisateur simple #}
             <div class="user-dashboard">
                 <h2>Bienvenue sur votre dashboard</h2>
                 <p class="alert-success">=> Vous êtes connecté en tant qu'utilisateur <=</p>
